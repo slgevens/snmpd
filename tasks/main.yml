@@ -11,4 +11,4 @@
 - name: Enable and start SNMPD
   notify:
     - restart snmpd
-  service: name=snmpd enable=yes state=running
+  service: name=snmpd enabled=yes state=running
