@@ -1,7 +1,0 @@
----
-- name: restart services
-  with_items:
-    - snmpd
-    - snmp
-  service: name={{ item }}
-...

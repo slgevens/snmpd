@@ -14,8 +14,6 @@ galaxy_info:
   categories:
   - monitoring
   - system
-dependencies:
-  - python-apt
-  - aptitude
+dependencies: []
                                       
   
