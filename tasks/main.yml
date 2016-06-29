@@ -5,7 +5,7 @@
     - snmp
   apt: name={{ item }} state=present
 
-- name: Configure SNMPD
+- name: Configure snmpd
   template: src=snmpd.conf.j2 dest=/etc/snmp/snmpd.conf
   notify:
     - restart snmpd
