@@ -1,2 +1,0 @@
-# snmpd
-Ansible SNMPD

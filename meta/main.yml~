@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: Evens SOLIGNAC
+  description: Role Ansible for SNMPD service on Debian
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - monitoring
+  - system
+dependencies: []
+                                      
+  

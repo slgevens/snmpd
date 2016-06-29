@@ -1,0 +1,26 @@
+---
+
+snmpd_agent_address: '{{ ansible_default_ipv4["address"] }}'
+snmpd_agent_port: 161
+snmpd_community: public
+
+snmpd_location: Paris
+snmpd_contact: evenssolignac@live.fr
+snmpd_services: 72
+
+
+# IPV6
+#snmpd_communityv6:
+
+#snmpd_proc:
+#snmpd_disk:
+#snmpd_load:
+
+snmpd_trapsink: localhost public
+snmpd_trap2sink: localhost public
+
+#snmpd_extend: 
+#snmpd_extend-sh: 
+
+#snmpd_master: agentx
+...

@@ -1,0 +1,6 @@
+---
+- name: Install SNMPD & SNMP
+  with_items:
+    - snmpd
+    - snmp
+  apt: name={{ item }} state=present

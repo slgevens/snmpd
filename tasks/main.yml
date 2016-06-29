@@ -1,0 +1,14 @@
+---
+- name: Install SNMPD & SNMP
+  with_items:
+    - snmpd
+    - snmp
+  apt: name={{ item }} state=present
+
+- name: Configure SNMPD
+  template: src: snmpd.conf.j2 dest=/etc/snmp/snmpd.conf
+  notify:
+    - restart service snmpd
+
+- name: Enable and start SNMPD
+  service: name=snmpd enable=yes state=running
