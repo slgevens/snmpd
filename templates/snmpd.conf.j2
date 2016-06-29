@@ -10,7 +10,6 @@ agentAddress udp:{{ snmpd_agent_address }}:{% if snmpd_agent_port is defined %}{
 # ACCESS CONTROL
 
 view   systemonly  included   .1.3.6.1.2.1.1
-
 view   systemonly  included   .1.3.6.1.2.1.25.1
 
 rocommunity {% if snmpd_community is defined %}{{ snmpd_community }}{% else %} public  default -V systemonly
@@ -25,9 +24,7 @@ rouser   authOnlyUser
 # SYSTEM INFORMATION
 
 sysLocation              {{ snmpd_location }}
-
 sysContact               {{ snmpd_contact }}
-
 sysServices              {{ snmpd_services }}
 
 #  Process Monitoring
