@@ -7,8 +7,8 @@
 
 - name: Configure snmpd
   template: src=snmpd.conf.j2 dest=/etc/snmp/snmpd.conf
-  notify:
-    - restart snmpd
 
 - name: Enable and start SNMPD
+  notify:
+    - restart snmpd
   service: name=snmpd enable=yes state=running
