@@ -11,14 +11,11 @@ agentAddress udp:{{ snmpd_agent_address }}:{% if snmpd_agent_port is defined %}{
 # ACCESS CONTROL
 
 {% for s in snmpd_view_configuration %}
-view {% if s.view_name is defined %}{{ s.view_name }}{% else %}{% endif %} included {% if s.oid_tree is defined %}{{ s.oid_tree }}{% else %}{% endif %}
+view   {% if s.view_name is defined %}{{ s.view_name }}{% else %}{% endif %}	included	{% if s.oid_tree is defined %}{{ s.oid_tree }}{% else %}{% endif %}
 
 {% endfor %}
 
 rocommunity {% if snmpd_community is defined %}{{ snmpd_community }}{% else %} public  default -V systemonly
-{% endif %}
-
-{% if snmpd_communityv6 is defined %}rocommunity6 {{ snmpd_communityv6 }}{% else %} public  default -V systemonly
 {% endif %}
 
 rouser   authOnlyUser
@@ -32,21 +29,21 @@ sysServices              {{ snmpd_services }}
 
 #  Process Monitoring
 {% for v in snmpd_proc_configuration %}
-proc {% if v.proc_name is defined %}{{ v.proc_name }}{% else %}{% endif %}  {% if v.proc_interval is defined %}{{ v.proc_interval }}{% else %}{% endif %}
+proc   {% if v.proc_name is defined %}{{ v.proc_name }}{% else %}{% endif %}	{% if v.proc_interval is defined %}{{ v.proc_interval }}{% else %}{% endif %}
 
 {% endfor %}
 
 
 #  Disk Monitoring
 {% for d in snmpd_disk_configuration %}
-disk {% if d.disk_path is defined %}{{ d.disk_path }}{% else %}{% endif %}  {% if d.disk_percentage is defined %}{{ d.disk_percentage }}{% else %}{% endif %}
+disk   {% if d.disk_path is defined %}{{ d.disk_path }}{% else %}{% endif %}	{% if d.disk_percentage is defined %}{{ d.disk_percentage }}{% else %}{% endif %}
 
 {% endfor %}
 
 
 #  System Load
 {% for l in snmpd_load_configuration %}
-load {% if l.load_interval is defined %}{{ l.load_interval }}{% else %}{% endif %}
+load   {% if l.load_interval is defined %}{{ l.load_interval }}{% else %}{% endif %}
 
 {% endfor %}
 
