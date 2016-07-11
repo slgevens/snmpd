@@ -12,12 +12,12 @@ snmpd_services: 72
 # IPV6
 #snmpd_communityv6:
 
-#snmpd_proc:
-#snmpd_disk:
-#snmpd_load:
-
 snmpd_trapsink: localhost public
 snmpd_trap2sink: localhost public
+
+snmpd_view_configuration: []
+snmpd_load_configuration: []
+snmpd_disk_configuration: []
 
 #snmpd_extend: 
 #snmpd_extend-sh: 
