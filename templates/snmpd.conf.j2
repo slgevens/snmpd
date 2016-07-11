@@ -5,8 +5,8 @@
 # AGENT BEHAVIOUR
 
 agentAddress udp:{{ snmpd_agent_address }}:{% if snmpd_agent_port is defined %}{{ snmpd_agent_port }}{% else %}161
-
 {% endif %}
+
 
 ###############################################################################
 # ACCESS CONTROL
