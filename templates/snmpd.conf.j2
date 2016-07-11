@@ -34,9 +34,6 @@ sysContact               {{ snmpd_contact }}
 sysServices              {{ snmpd_services }}
 
 #  Process Monitoring
-proc  mountd
-proc  ntalkd    4
-proc  sendmail 10 1
 {% for s in snmpd_proc_configuration %}
 {% for r in s.proc_conf %}
 {% if r.proc is defined %}proc{% else %}{% endif %} {% if r.proc_name is defined %}{{ r.proc_name }}{% else %}{% endif %}  {% if r.proc_interval is defined %}{{ r.proc_interval }}{% else %}{% endif %}
@@ -45,18 +42,14 @@ proc  sendmail 10 1
 
 #  Disk Monitoring
 
-disk       /     10000
-disk       /var  5%
 {% for s in snmpd_disk_configuration %}
 {% for r in s.disk_conf %}
 {% if r.disk is defined %}disk{% else %}{% endif %} {% if r.disk_path is defined %}{{ r.disk_path }}{% else %}{% endif %}  {% if r.disk_percentage is defined %}{{ r.disk_percentage }}{% else %}{% endif %}
 {% endfor %}
 {% endfor %}
-includeAllDisks  10%
 
 #  System Load
 
-load   12 10 5
 {% for s in snmpd_load_configuration %}
 {% for r in s.load_conf %}
 {% if r.load is defined %}load{% else %}{% endif %} {% if r.load_interval is defined %}{{ r.load_interval }}{% else %}{% endif %}
