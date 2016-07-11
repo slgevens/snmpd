@@ -34,13 +34,11 @@ proc   {% if v.proc_name is defined %}{{ v.proc_name }}{% else %}{% endif %}	{% 
 
 {% endfor %}
 
-
 #  Disk Monitoring
 {% for d in snmpd_disk_configuration %}
 disk   {% if d.disk_path is defined %}{{ d.disk_path }}{% else %}{% endif %}	{% if d.disk_percentage is defined %}{{ d.disk_percentage }}{% else %}{% endif %}
 
 {% endfor %}
-
 
 #  System Load
 {% for l in snmpd_load_configuration %}
