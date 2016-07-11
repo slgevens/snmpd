@@ -14,7 +14,7 @@ view   systemonly  included   .1.3.6.1.2.1.1
 view   systemonly  included   .1.3.6.1.2.1.25.
 
 {% for s in snmpd_view_configuration %}
-view {% if s.view_name is defined %}{{ s.view_name }}{% else %}{% endif %} included {% if s.oid_tsee is defined %}{{ s.oid_tree }}{% else %}{% endif %}
+view {% if s.view_name is defined %}{{ s.view_name }}{% else %}{% endif %} included {% if s.oid_tree is defined %}{{ s.oid_tree }}{% else %}{% endif %}
 
 {% endfor %}
 
