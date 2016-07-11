@@ -33,22 +33,23 @@ sysContact               {{ snmpd_contact }}
 sysServices              {{ snmpd_services }}
 
 #  Process Monitoring
-{% for r in snmpd_proc_configuration %}
-{% if r.proc is defined %}proc{% else %}{% endif %} {% if r.proc_name is defined %}{{ r.proc_name }}{% else %}{% endif %}  {% if r.proc_interval is defined %}{{ r.proc_interval }}{% else %}{% endif %}
+{% for v in snmpd_proc_configuration %}
+{% if v.proc is defined %}proc{% else %}{% endif %} {% if v.proc_name is defined %}{{ v.proc_name }}{% else %}{% endif %}  {% if v.proc_interval is defined %}{{ v.proc_interval }}{% else %}{% endif %}
+
 {% endfor %}
 
 
 #  Disk Monitoring
-
 {% for d in snmpd_disk_configuration %}
 {% if d.disk is defined %}disk{% else %}{% endif %} {% if d.disk_path is defined %}{{ d.disk_path }}{% else %}{% endif %}  {% if d.disk_percentage is defined %}{{ d.disk_percentage }}{% else %}{% endif %}
+
 {% endfor %}
 
 
 #  System Load
-
 {% for l in snmpd_load_configuration %}
 {% if l.load is defined %}load{% else %}{% endif %} {% if l.load_interval is defined %}{{ l.load_interval }}{% else %}{% endif %}
+
 {% endfor %}
 
 
