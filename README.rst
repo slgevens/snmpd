@@ -51,13 +51,19 @@ Example Playbook
        snmpd_contact: evenssolignac@live.fr
        snmpd_services: 72
 
-       snmpd_view_configuration: []
+       snmpd_view_configuration:
+        - { view_name: greneta, oid_tree: .1.3.6.1.4.1 }
+	- { view_name: test, oid_tree: .1.3.6.1.4.1.33 }
 
+       snmpd_proc_configuration:
+        - { proc_name: mountd, proc_interval: 2 }
 
-       snmpd_proc_configuration: []
-       snmpd_load_configuration: []
-       snmpd_disk_configuration: []
+       snmpd_load_configuration:
+        - { load_interval: 12 1 22 }
 
+       snmpd_disk_configuration:
+        - { disk_path: /var, disk_percentage: 70% }
+		 
        snmpd_trapsink: localhost public
        snmpd_trap2sink: localhost public
 
