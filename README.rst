@@ -53,7 +53,6 @@ Example Playbook
 
        snmpd_view_configuration:
         - { view_name: greneta, oid_tree: .1.3.6.1.4.1 }
-	- { view_name: test, oid_tree: .1.3.6.1.4.1.33 }
 
        snmpd_proc_configuration:
         - { proc_name: mountd, proc_interval: 2 }
