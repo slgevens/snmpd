@@ -5,8 +5,8 @@
 # AGENT BEHAVIOUR
 
 agentAddress udp:{{ snmpd_agent_address }}:{% if snmpd_agent_port is defined %}{{ snmpd_agent_port }}{% else %}161
-{% endif %}
 
+{% endif %}
 ###############################################################################
 # ACCESS CONTROL
 
@@ -68,10 +68,13 @@ linkUpDownNotifications  yes
 # EXTENDING THE AGENT
 
 {% if snmpd_extend is defined %}extend {{ snmpd_extend }}{% else %}
+
 {% endif %}
 
 {% if snmpd_extend_sh is defined %}extend-sh {{ snmpd_extend_sh }}{% else %}
+
 {% endif %}
-  
+
 {% if snmpd_master is defined %}master {{ snmpd_master }}{% else %}
+
 {% endif %}
