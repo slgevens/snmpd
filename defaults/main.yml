@@ -8,16 +8,17 @@ snmpd_location: Paris
 snmpd_contact: evenssolignac@live.fr
 snmpd_services: 72
 
+snmpd_view_configuration: []
+
+snmpd_proc_configuration: []
+snmpd_disk_configuration: []
+snmpd_load_configuration: []
 
 # IPV6
 #snmpd_communityv6:
 
 snmpd_trapsink: localhost public
 snmpd_trap2sink: localhost public
-
-snmpd_view_configuration: []
-snmpd_load_configuration: []
-snmpd_disk_configuration: []
 
 #snmpd_extend: 
 #snmpd_extend-sh: 
