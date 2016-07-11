@@ -15,7 +15,7 @@ view   systemonly  included   .1.3.6.1.2.1.25.
 {% for s in snmpd_view_configuration %}
 {% if s.view is defined %}view{% else %}{% endif %}	{% if s.view_name is defined %}{{ s.view_name }}{% else %}{% endif %}	included   {% if s.oid_tsee is defined %}{ s.oid_tree }{% else %}{% endif %}
 {% endfor %}
-{% endfor %}
+
 
 rocommunity {% if snmpd_community is defined %}{{ snmpd_community }}{% else %} public  default -V systemonly
 {% endif %}
@@ -36,21 +36,21 @@ sysServices              {{ snmpd_services }}
 {% for r in snmpd_proc_configuration %}
 {% if r.proc is defined %}proc{% else %}{% endif %} {% if r.proc_name is defined %}{{ r.proc_name }}{% else %}{% endif %}  {% if r.proc_interval is defined %}{{ r.proc_interval }}{% else %}{% endif %}
 {% endfor %}
-{% endfor %}
+
 
 #  Disk Monitoring
 
-{% for r in snmpd_disk_configuration %}
-{% if r.disk is defined %}disk{% else %}{% endif %} {% if r.disk_path is defined %}{{ r.disk_path }}{% else %}{% endif %}  {% if r.disk_percentage is defined %}{{ r.disk_percentage }}{% else %}{% endif %}
+{% for d in snmpd_disk_configuration %}
+{% if d.disk is defined %}disk{% else %}{% endif %} {% if d.disk_path is defined %}{{ d.disk_path }}{% else %}{% endif %}  {% if d.disk_percentage is defined %}{{ d.disk_percentage }}{% else %}{% endif %}
 {% endfor %}
-{% endfor %}
+
 
 #  System Load
 
-{% for r in snmpd_load_configuration %}
-{% if r.load is defined %}load{% else %}{% endif %} {% if r.load_interval is defined %}{{ r.load_interval }}{% else %}{% endif %}
+{% for l in snmpd_load_configuration %}
+{% if l.load is defined %}load{% else %}{% endif %} {% if l.load_interval is defined %}{{ l.load_interval }}{% else %}{% endif %}
 {% endfor %}
-{% endfor %}
+
 
 ###############################################################################
 # ACTIVE MONITORING
