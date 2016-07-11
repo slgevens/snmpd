@@ -51,9 +51,9 @@ Example Playbook
        snmpd_contact: evenssolignac@live.fr
        snmpd_services: 72
 
-       snmpd_proc: httpd
-       snmpd_disk: /space 5%
-       snmpd_load: 12 10 7
+       snmpd_view_configuration: []
+       snmpd_load_configuration: []
+       snmpd_disk_configuration: []
 
        snmpd_trapsink: localhost public
        snmpd_trap2sink: localhost public
@@ -62,7 +62,7 @@ Example Playbook
        snmpd_extend-sh: test2   echo Hello, world! ; echo Hi there ; exit 35
 
        snmpd_master: Agentx
-
+     
 License
 ============
 
