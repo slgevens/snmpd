@@ -12,15 +12,16 @@ agentAddress udp:{{ snmpd_agent_address }}:{% if snmpd_agent_port is defined %}{
 
 view   systemonly  included   .1.3.6.1.2.1.1
 view   systemonly  included   .1.3.6.1.2.1.25.
-{% for s in snmpd_view_configuration %}
-{% if s.view is defined %}view{% else %}{% endif %}	{% if s.view_name is defined %}{{ s.view_name }}{% else %}{% endif %}	included   {% if s.oid_tsee is defined %}{ s.oid_tree }{% else %}{% endif %}
-{% endfor %}
 
+{% for s in snmpd_view_configuration %}
+{% if s.view is defined %}view {% else %}{% endif %}{% if s.view_name is defined %}{{ s.view_name }}{% else %}{% endif %} included {% if s.oid_tsee is defined %}{{ s.oid_tree }}{% else %}{% endif %}
+
+{% endfor %}
 
 rocommunity {% if snmpd_community is defined %}{{ snmpd_community }}{% else %} public  default -V systemonly
 {% endif %}
 
-rocommunity6 {% if snmpd_communityv6 is defined %}{{ snmpd_communityv6 }}{% else %} public  default -V systemonly
+{% if snmpd_communityv6 is defined %}rocommunity6 {{ snmpd_communityv6 }}{% else %} public  default -V systemonly
 {% endif %}
 
 rouser   authOnlyUser
