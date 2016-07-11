@@ -52,6 +52,9 @@ Example Playbook
        snmpd_services: 72
 
        snmpd_view_configuration: []
+
+
+       snmpd_proc_configuration: []
        snmpd_load_configuration: []
        snmpd_disk_configuration: []
 
