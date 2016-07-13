@@ -66,13 +66,13 @@ linkUpDownNotifications  yes
 ###############################################################################
 # EXTENDING THE AGENT
 
-{% for x in snmpd_extend_configuration %}
-{% if x.snmpd_extend is defined %}extend {{ x.snmpd_extend }}{% else %}{% endif %}
+{% for p in snmpd_extend_configuration %}
+{% if p.snmpd_extend is defined %}extend {{ p.snmpd_extend }}{% else %}{% endif %}
 
 {% endfor %}
 
-{% for e in snmpd_extend_sh_configuration %}
-{% if e.snmpd_extend_sh is defined %}extend-sh {{ e.snmpd_extend_sh }}{% else %}{% endif %}
+{% for k in snmpd_extend_sh_configuration %}
+{% if k.snmpd_extend_sh is defined %}extend-sh {{ k.snmpd_extend_sh }}{% else %}{% endif %}
 
 {% endfor %}
 
