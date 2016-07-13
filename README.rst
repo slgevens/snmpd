@@ -73,9 +73,12 @@ Example Playbook
 		 
        snmpd_trapsink: localhost public
        snmpd_trap2sink: localhost public
-
-       snmpd_extend: test1   /bin/echo  Hello, world!
-       snmpd_extend-sh: test2   echo Hello, world! ; echo Hi there ; exit 35
+       
+       snmpd_extend_configuration:	
+        - { snmpd_extend: test1   /bin/echo  Hello, world! }
+      
+       snmpd_extend_sh_configuration: 
+       - { snmpd_extend-sh: test2   echo Hello, world! ; echo Hi there ; exit 35 }
 
        snmpd_master: Agentx
      
