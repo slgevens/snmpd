@@ -21,16 +21,24 @@ List of variables used in this role :
    snmpd_location 
    snmpd_contact 
    snmpd_services
-	
-   snmpd_proc
-   snmpd_disk
-   snmpd_load
-   
+
+   snmpd_proc_configuration:
+     - { proc_name, proc_interval }
+     
+   snmpd_load_configuration:
+     - { load_interval }
+  
+   snmpd_disk_configuration:
+     - { disk_path, disk_percentage }
+       
    snmpd_trapsink 
    snmpd_trap2sink 
 
-   snmpd_extend 
-   snmpd_extend-sh 
+   snmpd_extend_configuration:
+     - { snmpd_extend }
+  
+   snmpd_extend_sh_configuration:
+     - { snmpd_extend_sh }
    
    snmpd_master 
    
