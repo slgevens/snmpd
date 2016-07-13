@@ -17,6 +17,8 @@ snmpd_load_configuration: []
 snmpd_trapsink: localhost public
 snmpd_trap2sink: localhost public
 
+snmpd_extend_sh_configuration: []
+snmpd_extend_configuration: []
 #snmpd_extend: 
 #snmpd_extend-sh: 
 
