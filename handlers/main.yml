@@ -1,4 +1,1 @@
 ---
-- name: restart services
-  service: name=snmpd
-...
