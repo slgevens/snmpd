@@ -54,9 +54,6 @@ load   {% if l.load_interval is defined %}{{ l.load_interval }}{% else %}{% endi
 iquerySecName            internalUser
 rouser                   internalUser
 
-defaultMonitors          yes
-linkUpDownNotifications  yes
-
 # EXTENDING THE AGENT
 
 {% for p in snmpd_extend_configuration %}
