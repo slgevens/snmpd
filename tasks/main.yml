@@ -12,6 +12,4 @@
   service: name=snmpd state=stopped 
   
 - name: Enable and start SNMPD
-  notify:
-    - start snmpd
   service: name=snmpd enabled=yes state=started
