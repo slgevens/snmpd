@@ -1,14 +1,11 @@
 # {{ ansible_managed }}
 # DO NOT EDIT MANUALLY
 
-###############################################################################
 # AGENT BEHAVIOUR
 
 agentAddress udp:{{ snmpd_agent_address }}:{% if snmpd_agent_port is defined %}{{ snmpd_agent_port }}{% else %}161
 {% endif %}
 
-
-###############################################################################
 # ACCESS CONTROL
 
 {% for s in snmpd_view_configuration %}
@@ -21,7 +18,6 @@ rocommunity {% if snmpd_community is defined %}{{ snmpd_community }}{% else %} p
 
 rouser   authOnlyUser
 
-###############################################################################
 # SYSTEM INFORMATION
 
 sysLocation              {{ snmpd_location }}
@@ -46,7 +42,6 @@ load   {% if l.load_interval is defined %}{{ l.load_interval }}{% else %}{% endi
 
 {% endfor %}
 
-###############################################################################
 # ACTIVE MONITORING
 
 {% if snmpd_trapsink is defined %}trapsink {{ snmpd_trapsink }}{% else %}localhost public
@@ -62,7 +57,6 @@ rouser                   internalUser
 defaultMonitors          yes
 linkUpDownNotifications  yes
 
-###############################################################################
 # EXTENDING THE AGENT
 
 {% for p in snmpd_extend_configuration %}
