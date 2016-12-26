@@ -44,7 +44,7 @@ load   {% if l.load_interval is defined %}{{ l.load_interval }}{% else %}{% endi
 
 # Pass
 {% for p in snmp_pass_configuration %}
-pass   {% if p.oid is defined %}{% p.oid %}{% else %}{% endif %} {% if p.script_name is defined %}{% p.script_name %}{% else %}{% endif %} {% if p.path_script is defined %}{% p.path_script %}{% else %}{% endif %}
+pass   {% if p.oid is defined %}{{ p.oid }}{% else %}{% endif %} {% if p.script_name is defined %}{{ p.script_name }}{% else %}{% endif %} {% if p.path_script is defined %}{{ p.path_script }}{% else %}{% endif %}
 
 {% endfor %}
 
