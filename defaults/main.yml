@@ -1,5 +1,5 @@
 ---
-
+snmpd_packages: [ snmpd, snmp ]
 snmpd_agent_address: '{{ ansible_default_ipv4["address"] }}'
 snmpd_agent_port: 161
 snmpd_community: public

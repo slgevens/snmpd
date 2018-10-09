@@ -1,9 +1,6 @@
 ---
 - name: Install SNMPD & SNMP
-  with_items:
-    - snmpd
-    - snmp
-  apt: name={{ item }} state=present
+  apt: name="{{ snmpd_packages }}" state=present
 
 - name: Configure snmpd
   template: src=snmpd.conf.j2 dest=/etc/snmp/snmpd.conf
